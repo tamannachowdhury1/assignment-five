@@ -5,21 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/bootstrap.css">
     <title>Select five footballers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        penguin: '#FFFBF0',
+                        price: '#FABE4C'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body class="bg-dark bg-gradient">
+<body>
+
     <header>
-        <div class="container bg-black d-flex gap-5  p-5  rounded-3">
+        <div class="container bg-black flex gap-5  p-5  rounded-3">
             <div>
                 <img src="images/Kylian Mbappé5.jpg" class="w-100 h-100" alt="">
             </div>
             <div>
-                <h1 class="text-primary ">
+                <h1 class="text-orange-700 text-5xl">
                     Select five footballers of your choice
                 </h1>
-                <p class="text-secondary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                <p class="text-cyan-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
                     Velit
                     <br>
                     officia consequat duis enim velit mollit. Exercitation veniam consequat sunt <br>
@@ -28,117 +43,119 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="container">
-            <div class="d-flex gap-5">
-                <div class="mt-5 pt-5">
-                    <div class="d-flex justify-content-center gap-5">
-                        <div class="card bg-black" style="width: 18rem;">
-                            <img src="images/lionel.jpg" class="card-img-top h-50" alt="...">
-                            <div class="card-body text-center">
-                                <h5 class="text-white">Lionel Messi</h5>
-                                <p class="text-white">36 Goals 120 Assist</p>
-                                <button id="button-name" class="w-50 mx-5 btn btn-primary rounded-0">SELECT</button>
-                            </div>
-                        </div>
-                        <div class="card bg-black" style="width: 18rem;">
-                            <img src="images/Neymar.jpg" class="card-img-top h-50" alt="...">
-                            <div class="card-body text-center">
-                                <h5 class="text-white">Neymar Jr</h5>
-                                <p class="text-white">36 Goals 120 Assist</p>
-                                <button id="nymar-name" class="w-50 mx-5 btn btn-primary rounded-0">SELECT</button>
-                            </div>
-                        </div>
-
-                        <div class="card bg-black" style="width: 18rem;">
-                            <img src="images/Kylian Mbappé.jpg" class="card-img-top h-50" alt="...">
-                            <div class="card-body text-center">
-                                <h5 class="text-white">Kylian Mbappé</h5>
-                                <p class="text-white">36 Goals 120 Assist</p>
-                                <button class="w-50 mx-5 btn btn-primary rounded-0">SELECT</button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div>
-                        <div class="d-flex justify-content-center gap-5 mt-5 mb-5">
-                            <div class="card bg-black" style="width: 18rem;">
-                                <img src="images/Vítor Machado.jpg" class="card-img-top" alt="...">
-                                <div class="card-body text-center">
-                                    <h5 class="text-white">Vítor Machado</h5>
-                                    <p class="text-white">36 Goals 120 Assist</p>
-                                    <button class="w-50 mx-5 btn btn-primary rounded-0">SELECT</button>
-                                </div>
-                            </div>
-                            <div class="card bg-black" style="width: 18rem;">
-                                <img src="images/Sergio Ramos.jpg" class="card-img-top" alt="...">
-                                <div class="card-body text-center">
-                                    <h5 class="text-white">Sergio Ramos</h5>
-                                    <p class="text-white">36 Goals 120 Assist</p>
-                                    <button class="w-50 mx-5 btn btn-primary rounded-0">SELECT</button>
-                                </div>
-                            </div>
-
-                            <div class="card bg-black" style="width: 18rem;">
-                                <img src="images/Renato Sanches.jpg" class="card-img-top" alt="...">
-                                <div class="card-body text-center">
-                                    <h5 class="text-white">Sergio Ramos</h5>
-                                    <p class="text-white">36 Goals 120 Assist</p>
-                                    <button class="w-50 mx-5 btn btn-primary rounded-0 ">SELECT</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+    <main class="container mx-auto bg-[#E5E5E5]">
+        <section class="py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
+                <!-- palyer 1 -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/lionel.jpg" alt="">
+                    <h2 class=" text-3xl text-center text-white mt-3">Lionel Messi</h2>
+                    <p class="text-center text-white">36 Goals 120 Assist</p>
+                    <button id="select-btn"
+                        class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
                 </div>
-                <div class="text-white mt-5 pt-5">
-                    <div class="bg-black gap-5  rounded-2 py-5">
-                        <h5 class="text-center">Select-v
-                        </h5>
-                        <ol class="text-white pb-2 ">
-                            <li id="player-One" class="py-2">Lionel Messi</li>
-                            <li id="player-two" class="py-2">Neymar J</li>
-                            <li id="player-three" class="py-2">Renato Sanche</li>
-                            <li id="player-four" class="py-2">Kylian Mbapp</li>
-                            <li id="player-five" class="py-2">Keylor Navas</li>
-                        </ol>
-                    </div>
-                    <div class="bg-black text-white text-center rounded-2 ps-3 mt-5">
-                        <h4 class="fs-0">Budget</h4>
-                        <p>Per Player
-                            <input type="text" class="bg-black border">
-                        </p>
-                        <button class="btn btn-primary rounded-0 px-5">Calculate</button>
-                        <p>Player Expenses<input type="text" class="bg-black border"></p>
-                        <p>Manager <input type="text" class="bg-black border"></p>
-                        <p>Coach <input type="text" class="bg-black border"></p>
-                        <button class="btn btn-primary rounded-0 px-5">Calculate Total</button>
-                        <p class="fs-0">Total<span class="text-end">$11000</span></p>
-                    </div>
+                <!-- Player 2 -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/Neymar.jpg" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Neymar Jr</h2>
+                    <p class="text-center text-white">36 Goals 120 Assist</p>
+                    <button id="select-btn"
+                        class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+                <!-- player 3 -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/Kylian Mbappé5.jpg" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Kylian Mbappé</h2>
+                    <p class="text-center text-white">36 Goals 120 Assist</p>
+                    <button id="select-btn"
+                        class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+
+                <!--  select v  -->
+                <div class="bg-yellow-50 border border-green-900">
+                    <h1 class="text-2xl font-medium text-center  mt-3  ">Select-V</h1>
+                    <p id="player-number"> </p>
+                    <!-- <table>
+                        <tbody id="player-table">
+
+                        </tbody>
+                    </table> -->
+                    <ol class="text-2xl text-center">
+                        <li id="player-table">
+
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- player 4  -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/Vítor Machado.jpg" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Vítor Machado</h2>
+                    <p class="text-center text-white">36 Goals 120 Assist</p>
+                    <button id="select-btn"
+                        class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+                <!-- player 5  -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/Sergio Ramos.jpg" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Sergio Ramos</h2>
+                    <p class="text-center text-white">36 Goals 120 Assist</p>
+                    <button id="select-btn"
+                        class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+                <!-- palyer 6  -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/Renato Sanches.jpg" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Renato Sanches</h2>
+                    <p class="text-center text-white">36 Goals 120 Assist</p>
+                    <button id="select-btn"
+                        class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+
+
+                <!-- Budget field  -->
+                <div class="bg-black row-span-2">
+                    <h1 class="text-3xl text-white text-center mt-3">Budget</h1>
+                    <!-- Par Player  -->
+                    <p class="text-2xl  text-white mx-5 mb-1 mt-4">Par Player :</p>
+                    <input id="parPlayer-field" class="p-1 mx-5 mt-3 text-center" type="text">
+                    <!-- Calculate button  -->
+                    <button id="calculate-field"
+                        class="text-2xl bg-blue-500 px-20 mx-4 py-1 rounded-lg mt-8">Calculate</button>
+                    <!-- Player expenses  -->
+                    <h1 class="text-white  text-2xl mx-6 mt-6"><strong>Player Expenses:</strong> $<span
+                            id="player-expenses-field"> 00 </span></h1>
+                    <!-- Manger  -->
+                    <p class="text-white mt-4 mx-6 text-2xl">Manager :</p>
+                    <input type="text" name="" id="manager-salary-field" class="p-1 mt-4 mx-5 text-center">
+                    <!-- Coach -->
+                    <p class="text-white text-2xl mx-6 mt-2">Coach :</p>
+                    <input id="coach-salary-field" type="text" class="p-1 mt-4 text-center mx-5">
+                    <!-- Calculate Total  -->
+                    <button id="calculate-total-field"
+                        class="text-2xl bg-blue-500 px-20 mx-4 py-1 rounded-lg mt-8">Calculate Total</button>
+                    <!-- total  -->
+                    <p class="text-white  text-2xl mx-6 mt-8 text-center"><strong>Total : </strong> $ <span
+                            id="total-Amount">00</span></p>
+
+
+
                 </div>
             </div>
         </section>
     </main>
-    <script src="js/addName.js"></script>
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="JS/addname.js"></script>
 
 </body>
-<footer class="bg-black border border-top p-5 mt-5">
-    <span class=" border-secondary border-top"></span>
+<footer class="bg-black p-5 mt-5">
+    <p class=" text-center text-white  mt-5 ">Copyright @ 2022 All Rights Reserved</p>
+</footer>
 
-    <p class=" text-center text-secondary  mt-5 ">Copyright @ 2022 All Rights Reserved</p>
 </footer>
 
 </html>
-<!-- <div class="bg-black text-white text-center rounded-2 ps-3">
-    <h4 class="">Budget</h4>
-    <p>Per Player
-        <input type="text" class="bg-black">
-    </p>
-    <button class="btn btn-primary rounded-0">Calculate</button>
-    <p>Player Expenses <input type="text" class="bg-black"></p>
-    <p>Manager <input type="text" class="bg-black"></p>
-    <p>Coach <input type="text" class="bg-black"></p>
-    <button class="btn btn-primary rounded-0">Calculate Total</button>
-    <p class="font-size-3">Total<span class="text-end">$11000</span></p>
-</div> -->
+
+<!-- <footer class="bg-black p-5 mt-5">
+    <p class=" text-center text-white  mt-5 ">Copyright @ 2022 All Rights Reserved</p>
+</footer> -->
