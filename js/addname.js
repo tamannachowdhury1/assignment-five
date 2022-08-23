@@ -1,11 +1,11 @@
 const players = [];
-const btns = document.querySelectorAll('#select-btn');
+const btns = document.querySelectorAll('#btn-name');
 
 
 
 // console.log(btns);
 function makeList() {
-    const OrderPlayerlist = document.getElementById('player-table');
+    const OrderPlayerlist = document.getElementById('player-list');
     OrderPlayerlist.innerHTML = '';
     for (let i = 0; i < players.length; i++) {
         const name = players[i];
